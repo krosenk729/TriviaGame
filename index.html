@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Seuss Game</title>
+	<meta charset="utf-8">
+	<meta name="description" content="Trivia Game to Guess Which Answer is Righter than Right">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+	<link rel="stylesheet" href="assets/css/style.css">	
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="assets/javascript/app.js"></script>
+
+</head>
+<body>
+	<div class="page">
+		<div class="jumbotron text-center">
+			<h1>What Seuss is What?</h1>
+			<h4>You have brains in your head. You have feet in your shoes.</h4>
+		</div>
+		<div class="game-wrapper container">
+			<div class="card-wrapper card-welcome" id="card-welcome">
+			<div class="card game-card text-center">
+				<div class="card-block">
+					<h6 class="text-muted">Name That Seuss-ism</h6>
+					<h4 class="text-muted">Match the meaning to the word before time runs out</h4>
+					<img src="/pix/samples/12s.jpg" alt="Photo of sunset">
+					<div>
+						<button id="play-game" class="btn btn-info">Play</button>
+					</div>
+				</div>
+			</div>
+		</div><!--card-wrapper card-welcome-->
+		<div class="card-wrapper card-question" id="card-question">
+			<div class="card game-card text-center">
+				<div class="card-block">
+					<h6 class="game-prequestion text-muted">What is...</h6>
+					<h4 class="game-question card-title">One of Dr. Ginn's medical specialties</h4>
+					<form class="game-answers" id="game-answers">
+						<div class="form-group">
+							<label class="game-question sr-only" for="button1id">Double Button</label>
+							<button id="A0" data-answer="t1" class="btn btn-info">Good Button</button>
+							<button id="A1" data-answer="t1" class="btn btn-info">Scary Button</button>
+							<button id="A3" data-answer="t1" class="btn btn-info">Scary Button</button>
+							<button id="A4" data-answer="t1" class="btn btn-info">Scary Button</button>
+						</div>
+					</form>
+				</div>
+				<div class="card-footer">
+					<div class="progress">
+						<div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+					</div>
+					<div class="timer">
+						<div class="counting">00:30</div>
+						<button class="btn btn-info" id="pause-play">Pause</button>
+					</div>
+				</div>
+			</div>
+		</div><!--card-wrapper card-question-->
+			<div class="card-wrapper card-pause" id="card-pause">
+			<div class="card game-card text-center">
+				<div class="card-block">
+					<h6 class="text-muted">Name That Seuss-ism</h6>
+					<h4 class="text-muted" id="score-message">Paused</h4>
+					<button id="unpause" class="btn btn-info">Unpause</button>
+				</div>
+			</div>
+		</div><!--card card-pause-->
+		<div class="card-wrapper card-score" id="card-score">
+			<div class="card game-card text-center">
+				<div class="card-block">
+					<h6 class="text-muted">Name That Seuss-ism</h6>
+					<h4 class="text-muted" id="score-message">Match the meaning to the word before time runs out</h4>
+					<img src="/pix/samples/12s.jpg" alt="Photo of sunset">
+					<div>
+						<h4>Correct answers: <span id="correct">0</span></h4>
+						<h4>Incorzzuple answers: <span id="incorrect">0</span></h4>
+						<h4>Time Zupped Too Soon: <span id="timedout">0</span></h4>
+					</div>
+					<div class="game-over" id="game-over">
+						<button id="play-new" class="btn btn-info">Play a New Game</button>
+					</div>
+				</div>
+			</div>
+		</div><!--card-wrapper card-score-->
+		</div> <!--game-wrapper container-->
+	</div><!--page-->
+	<script type="text/javascript">
+
+		/*
+		function loadQs(){
+			var v = $.getJSON( 'assets/javascript/quizquestions.json', function(d){ console.log(d.AllQuestions); return d.AllQuestions; } );
+			console.log(v);
+		}
+		var allQuestions = loadQs();
+		*/
+	</script>
+</body>
+</html>
