@@ -1,0 +1,10 @@
+[
+"Q1" : {"name": "a-la-hoop", "definition": "Sleepwalking engaged in by the Hoop-Soup-Snoop-Group — in Dr. Seuss's Sleep Book.", "notA": "jertain", "notB": "midwinter jicker", "notC": "wocket"},
+"Q2" : {"name": "aldermen", "definition": "City officials present on a reviewing stand", "notA": "jibboo", "notB": "murky-mooshy", "notC": "wumbus"},
+"Q3" : {"name": "antrums", "definition": "One of Dr. Ginn's medical specialties", "notA": "jill-ikka-jast", "notB": "na-nupp", "notC": "yekko"},
+"Q4" : {"name": "a-snooze", "definition": "A state of sleep", "notA": "jogg-oons", "notB": "nerd", "notC": "yuzz"},
+"Q5" : {"name": "asso-see-eye-ation", "definition": "Organization responsible for training of Birthday Birds", "notA": "kweet", "notB": "nizzards", "notC": "yuzz-a-ma-tuzz"},
+"Q6" : {"name": "bagpipes", "definition": "Musical instrument made out of straws and socks by Mrs. Fox", "notA": "jertain", "notB": "nooth grush", "notC": "zamp"},
+"Q7" : {"name": "balber", "definition": "Magic incantation (a spell. It's a magic spell)", "notA": "jibboo", "notB": "obsk", "notC": "zatz-it"},
+"Q8" : {"name": "bandwagon", "definition": "Vehicle pulled by an elephant and two giraffes", "notA": "jill-ikka-jast", "notB": "once-ler", "notC": "zax"}
+]

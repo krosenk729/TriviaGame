@@ -1,0 +1,60 @@
+{
+   "AllQuestions":[
+      {
+         "name":"a-la-hoop",
+         "definition":"Sleepwalking engaged in by the Hoop-Soup-Snoop-Group — in Dr. Seuss's Sleep Book.",
+         "notA":"jertain",
+         "notB":"midwinter jicker",
+         "notC":"wocket"
+      },
+      {
+         "name":"aldermen",
+         "definition":"City officials present on a reviewing stand",
+         "notA":"jibboo",
+         "notB":"murky-mooshy",
+         "notC":"wumbus"
+      },
+      {
+         "name":"antrums",
+         "definition":"One of Dr. Ginn's medical specialties",
+         "notA":"jill-ikka-jast",
+         "notB":"na-nupp",
+         "notC":"yekko"
+      },
+      {
+         "name":"a-snooze",
+         "definition":"A state of sleep",
+         "notA":"jogg-oons",
+         "notB":"nerd",
+         "notC":"yuzz"
+      },
+      {
+         "name":"asso-see-eye-ation",
+         "definition":"Organization responsible for training of Birthday Birds",
+         "notA":"kweet",
+         "notB":"nizzards",
+         "notC":"yuzz-a-ma-tuzz"
+      },
+      {
+         "name":"bagpipes",
+         "definition":"Musical instrument made out of straws and socks by Mrs. Fox",
+         "notA":"jertain",
+         "notB":"nooth grush",
+         "notC":"zamp"
+      },
+      {
+         "name":"balber",
+         "definition":"Magic incantation (a spell. It's a magic spell)",
+         "notA":"jibboo",
+         "notB":"obsk",
+         "notC":"zatz-it"
+      },
+      {
+         "name":"bandwagon",
+         "definition":"Vehicle pulled by an elephant and two giraffes",
+         "notA":"jill-ikka-jast",
+         "notB":"once-ler",
+         "notC":"zax"
+      }
+   ]
+}

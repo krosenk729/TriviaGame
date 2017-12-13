@@ -1,0 +1,48 @@
+
+html, body, .page{
+	height: 100%;
+}
+
+.page{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.game-wrapper, .card-wrapper, .game-card{
+	height: 100%;
+}
+
+.game-wrapper{
+	margin-bottom: 3%;
+}
+
+/*.card-welcome,*/
+.card-score,
+.card-pause, 
+.card-question{
+	display: none;
+}
+
+.card-footer{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	justify-content: space-between;
+}
+
+.card-footer .progress{
+	flex: 1 100%;
+	margin: auto;
+}
+
+.card-footer .timer{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+}
+.card-footer .timer > div{
+	margin: 1em;
+}
