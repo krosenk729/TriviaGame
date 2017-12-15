@@ -1,3 +1,11 @@
+/*
+turquoise #66CAC0
+yellow #F9D801
+*/
+
+/*****************************/
+/* Game Page Formatting 
+/****************************/
 
 html, body, .page{
 	height: 100%;
@@ -7,6 +15,7 @@ html, body, .page{
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	background-image: url('../images/pattern3.jpg')
 }
 
 .game-wrapper, .card-wrapper, .game-card{
@@ -24,17 +33,38 @@ html, body, .page{
 	display: none;
 }
 
+/*****************************/
+/* Element Styling 
+/****************************/
+
+h1, h2, h3, h4, h5, h6, button{
+	font-family: 'Boogaloo', cursive;
+}
+
+.jumbotron{
+	padding: 2em 1em;
+	color: white;
+	background-color: #009DDC;
+}
+
+.jumbotron p{
+	margin: 0;
+}
+
+.card{
+	padding: 1.8em;
+	background-color: rgba(255,255,255,.9);
+	border-color: #FFF200;
+	justify-content: space-between;
+}
+
 .card-footer{
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
 	display: flex;
 	justify-content: space-between;
-}
-
-.card-footer .progress{
-	flex: 1 100%;
-	margin: auto;
+	background: rgba(255,255,255,0);
 }
 
 .card-footer .timer{
@@ -46,3 +76,62 @@ html, body, .page{
 .card-footer .timer > div{
 	margin: 1em;
 }
+
+.card-footer .progress{
+	flex: 1 100%;
+	margin: auto;
+}
+
+.progress-bar{
+	padding: .5em;
+	background-color: 
+}
+
+.form-group{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.form-group button{
+	flex-grow: 1;
+	flex-basis: 40%;
+}
+
+.seuss-btn{
+	background-color: #009DDC;
+	color: #FFFFFF;
+	border: 2px solid #FFFFFF;
+	margin: 2px;
+}
+
+.seuss-btn:hover{
+	color: #009DDC;
+	background-color: rgba(255,255,255,0);
+	border-color: #FFF200;
+}
+
+.seuss-btn:active{
+	color: #009DDC;
+	background-color: #FFF200;
+	border-color: #FFF200;
+	opacity: .2;
+	-ms-transform: scale(.9);
+	-webkit-transform: scale(.9);
+	transform: scale(.9);
+}
+
+.fish-btn{
+	color: #F26150;
+	background-color: rgba(255,255,255,0);
+	border: 2px solid #ED1B2E;
+	transition: 5s;
+}
+
+.seuss-red{
+	background-color: #ED1B2E;
+}
+.seuss-red:hover{
+	background-color: #F26150;
+}
+

@@ -5,56 +5,160 @@
 	<meta charset="utf-8">
 	<meta name="description" content="messing around learnging -- helper file only">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+	<style type="text/css">
+		.form-group{
+			width: 100%;
+			margin-bottom: 10px;
+		}
+		.card{ /*I know bootstrap has utilities but this was getting out of control*/
+			width: 100%;
+			height: 100%;
+			text-align: center;
+		}
+		.btn-add{
+			width: 100%;
+			height: 100%;
+			margin: 0;
+			padding: .5rem 1rem;
+		}
+		.card-footer{
+			padding: 0;
+		}
+
+		#card-99{}
+	</style>
 	
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
-
-<div class="container">
-	<div class="row">
-		<div class="card">
-			<div class="card-body" id="stuffs">30</div>
-			<button class="btn" id="start">Start</button>
-			<button class="btn" id="stop">Stop</button>
-			<button class="btn" id="restart">Reset</button>
-		</div>
+	<div class="container">
+		
 	</div>
-</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-6 cols-sm-4">
+				<div class="card card-counter card-up w-100 text-center" id="card-99">
+					<div class="card-header"><h3>My Timer</h3></div>
+					<div class="card-body">
+						<div class="card-block">
+						<div class="card-title card-count">30</div>
+						<div class="card-status">Paused</div>
+						<button class="btn bt-start">Start</button>
+						<button class="btn bt-stop">Pause</button>
+						<button class="btn bt-restart">Clear</button>
+					</div>
+					</div>
+				</div><!--card-->
+			</div><!--col-->
+
+			<div class="col-6 cols-sm-4">
+				<div class="card card-counter card-creator w-100 text-center">
+					<div class="card-header">
+						<label for="newName"><h3>Name</h3></label>
+						<input type="text" name="newName">
+					</div>
+					<div class="card-body">
+						<div class="card-block">
+							<form>
+								<div class="form-group">
+									<button class="btn bt-up">Up</button>
+									<button class="btn bt-down">Down</button>
+								</div>
+								<div class="form-group card-down-from">
+									<label for="downFrom">Seconds</label>
+									<input type="number" name="downFromSec" step="1" min="0" class="w-70">
+								</div>
+							</form>
+						</div>
+					</div>
+					<div class="card-footer">
+						<button class="btn-add">Add Timer</button>
+					</div>
+				</div><!--card-->
+			</div><!--col-->
+		</div><!--row-->
+	</div><!--container-->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript">
+$(document).ready(function(){
 
-	$(document).ready(function(){
-		var userTime, questTime, t;
-		questTime = 10;
-		userTime = questTime;
+});
 
-		$('#start').click( function(){ myStart(false);} );
-		$('#stop').click( myPause );
-		$('#restart').click( function(){myStart(true);} );
+$('#card-99').on('click','.bt-start', function(){
+	var c = $(this).parents('.card').attr('id');
+	var d = pageCounters[c];
+	console.log(typeof d.time);
+	console.log(d.start);
+	d.start();
+});
 
-		function myStart( isNew ){
-			if( isNew ){ userTime = questTime; }
-			$('#stuffs').html(userTime);
+class Counter{
+  constructor(name, no, dir, downF){
+    this._name = name,
+    this._no = no,
+    this._dir = dir, //'up' or 'down'
+    this._downF = downF, //counting down from (if passed)
+    this.time = (downF === undefined ) ? 0 : downF,
+    this.running = false,
+    this.timer = {}
+  }
+  get name(){ return this._name ; }
+  get no(){ return this._no ; }
+  get dir(){ return this._dir ; }
+  get downF(){ return this._downF ; }
 
-			t = setInterval(countStuff, 1000);
+  createCard(){
+    var v = '';
+    v += '<div class="col-6 cols-sm-4"><div class="card card-counter card-' + this.dir + '" id="card-' + this.no + '">';
+    v += '<div class="card-header"><h3>My Timer</h3></div><div class="card-body">';
+    v += '<div class="card-block"><div class="card-title card-count">30</div>';
+    v += '<div class="card-status">Paused</div><button class="btn bt-start">Start</button><button class="btn bt-stop">Pause</button><button class="btn bt-restart">Clear</button>';
+    v += '</div></div></div><!--card--></div><!--col-->';
+    return v;
+  }
 
-			function countStuff(){
-				userTime = Math.max(0, userTime - 1);
-				$('#stuffs').html(userTime);
-				if(userTime === 0 ){ myPause(); }
-			}
-		}
+  start(){
+    if(!this.running){
+      this.timer = setInterval(function(){
+      	this.time++;
+      	$('#card-'+ this['no'] + ' .card-count').html( this['time'] );
+      }, 1000);
+      this.running = true;
+    }
+  }
 
-		function myPause(){
-			clearTimeout(t);
-		}
-	});
+
+  countDown(){
+      this.time = Math.max(0, time - 1);
+      $('#card-'+this.no).html( this.time );
+  }
+
+  stop(){
+    clearInterval(this.timer);
+    this.running = false;
+  }
+
+  reset(){}
+
+}
+
+
+var numCounters = 0;
+var pageCounters = {
+	numCounters: 0
+}
+
+pageCounters['card-99'] = new Counter('card-99', 99, 'up', 0);
+
+
+
 	/*
 		function loadQs(){
 			var v = $.getJSON( 'assets/javascript/quizquestions.json', function(d){ console.log(d.AllQuestions); return d.AllQuestions; } );
 			console.log(v);
 		}
 		var allQuestions = loadQs();
-	*/
-</script>
+		*/
+	</script>
 </body>
 </html>
