@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Learning Stuff</title>
+	<meta charset="utf-8">
+	<meta name="description" content="messing around learnging -- helper file only">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+	<div class="row">
+		<div class="card">
+			<div class="card-body" id="stuffs">30</div>
+			<button class="btn" id="start">Start</button>
+			<button class="btn" id="stop">Stop</button>
+			<button class="btn" id="restart">Reset</button>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+
+	$(document).ready(function(){
+		var userTime, questTime, t;
+		questTime = 10;
+		userTime = questTime;
+
+		$('#start').click( function(){ myStart(false);} );
+		$('#stop').click( myPause );
+		$('#restart').click( function(){myStart(true);} );
+
+		function myStart( isNew ){
+			if( isNew ){ userTime = questTime; }
+			$('#stuffs').html(userTime);
+
+			t = setInterval(countStuff, 1000);
+
+			function countStuff(){
+				userTime = Math.max(0, userTime - 1);
+				$('#stuffs').html(userTime);
+				if(userTime === 0 ){ myPause(); }
+			}
+		}
+
+		function myPause(){
+			clearTimeout(t);
+		}
+	});
+	/*
+		function loadQs(){
+			var v = $.getJSON( 'assets/javascript/quizquestions.json', function(d){ console.log(d.AllQuestions); return d.AllQuestions; } );
+			console.log(v);
+		}
+		var allQuestions = loadQs();
+	*/
+</script>
+</body>
+</html>
