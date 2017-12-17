@@ -1,7 +1,7 @@
 var ansShowTime = 3; 
 var questTime = 20; //time per question in seconds
 var allQuestions = loadQs(); // array of all questions to pull from
-var gameLength = 3; // number of questions in a game
+var gameLength = 6; // number of questions in a game
 
 
 $(document).ready(function(){
@@ -151,14 +151,6 @@ $(document).ready(function(){
 // generic functions 
 // function to get all questions
 function loadQs(){
-	// var t = $.ajax({
-	// 	url: 'assets/javascript/quizquestions.json',
-	// 	async: false,
-	// 	dataType: 'json',
-	// 	contentType: 'application/json'
-	// });
-	// return t.responseJSON.AllQuestions;
-
 	var t = $.ajax({
 		url: 'assets/javascript/seussqs.json',
 		async: false,
@@ -171,16 +163,7 @@ function loadQs(){
 
 // function to randomly sort an array
 function randArr( arr ){
-	return arr.sort(function(a, b){return 0.5 - Math.random()});
-}
-
-// function to construct a question
-function Question(name, definition, notA, notB, notC){
-	this.name = name;
-	this.definition = definition;
-	this.notA = notA;
-	this.notB = notB;
-	this.notC = notC;
+	return arr.sort(function(a, b){return 0.5 - Math.random(); });
 }
 
 // quotes
