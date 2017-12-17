@@ -11,11 +11,15 @@ html, body, .page{
 	height: 100%;
 }
 
+body{
+	background-image: url('../images/pattern3.jpg');
+	background-size: contain;
+}
+
 .page{
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	background-image: url('../images/pattern3.jpg')
 }
 
 .game-wrapper, .card-wrapper, .game-card{
@@ -55,6 +59,10 @@ h1, h2, h3, h4, h5, h6, button{
 	padding: 1.8em;
 	background-color: rgba(255,255,255,.9);
 	border-color: #FFF200;
+	justify-content: space-around;
+}
+
+.card .card-question{
 	justify-content: space-between;
 }
 

@@ -119,17 +119,20 @@ $(document).ready(function(){
 			case undefined:
 				ansTimed ++;
 				$('#timedout').text(ansTimed);
-				$('#score-message').html('How did it get so late so soon? <br>The clock counted down before you answered');
+				$('#score-quote').html('How did it get so late so soon?');
+				$('#score-message').html('The clock counted down before you answered\n'+ gameQuestions[pos-1].name + ' was the word we were looking for' );
 				break;
 			case gameQuestions[pos-1].name:
 				ansCor ++;
 				$('#correct').text(ansCor);
-				$('#score-message').html('You have brains in your head');
+				$('score-quote').html('You have brains in your head');
+				$('#score-message').html('Great thinking!\n'+ gameQuestions[pos-1].name + ' was right');
 				break;
 			default:
 				ansIncor ++;
 				$('#incorrect').text(ansIncor);
-				$('#score-message').html('That wasn\'t right... you should have said '+ gameQuestions[pos-1].name + '<br>Oh, the thinks you can think up if only you try!');
+				$('score-quote').html('Oh, the thinks you can think up if only you try!');
+				$('#score-message').html('That wasn\'t right... you should have said '+ gameQuestions[pos-1].name );
 		}
 
 		changeCard('.card-score');
@@ -148,13 +151,22 @@ $(document).ready(function(){
 // generic functions 
 // function to get all questions
 function loadQs(){
+	// var t = $.ajax({
+	// 	url: 'assets/javascript/quizquestions.json',
+	// 	async: false,
+	// 	dataType: 'json',
+	// 	contentType: 'application/json'
+	// });
+	// return t.responseJSON.AllQuestions;
+
 	var t = $.ajax({
-		url: 'assets/javascript/quizquestions.json',
+		url: 'assets/javascript/seussqs.json',
 		async: false,
 		dataType: 'json',
 		contentType: 'application/json'
 	});
-	return t.responseJSON.AllQuestions;
+	return t.responseJSON;
+
 }
 
 // function to randomly sort an array
@@ -171,3 +183,11 @@ function Question(name, definition, notA, notB, notC){
 	this.notC = notC;
 }
 
+// quotes
+// If things start happening, don’t worry, don’t stew. Just go right along and you’ll start happening, too.
+// Sometimes the answers are simple and the questions are hard
+// I like nonsense, it wakes up the brain cells.
+// You're in pretty good shape for the shape you are in.
+// It is fun to have fun but you have to know how.
+// There is fun to be done! There are points to be scored. There are games to be won.
+// Think left and think right and think low and think high. Oh, the things you can think up if only you try!
