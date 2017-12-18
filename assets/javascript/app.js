@@ -92,7 +92,7 @@ $(document).ready(function(){
 			$('.form-group').append(v);
 		});
 
-		$('.progress-bar').css('width', ( pos / gameLength * 100 ) + '%').html('<h5>' + pos + ' out of ' + gameLength + '</h5>' );
+		$('.progress-bar').css('width', ( pos / gameLength * 100 ) + '%').html('<h6>Question' + pos + ' out of ' + gameLength + '</h6>' );
 
 		changeCard('.card-question');
 		questTimer.timeQ( true );
